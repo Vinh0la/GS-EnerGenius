@@ -39,7 +39,7 @@ Este projeto utiliza o ESP32 para monitorar e controlar o consumo de energia el√
 
 1. **Clone o Reposit√≥rio**
    ```bash
-   git clone https://github.com/SEU_USUARIO/iot-energy-monitor.git
+   git clone https://github.com/Vinh0la/GS-EnerGenius.git
 
 ### **Abra no Simulador Wokwi**
 1. Acesse o [Wokwi](https://wokwi.com).
