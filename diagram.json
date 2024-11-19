@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "author": "Gustavo Vinhola dos Santos",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -231.8, "left": -21.6, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -20.5, "left": -105.8, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -72.8, "left": 165.42, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 221, "left": 134.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -262.8,
+      "left": -25,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -253.2,
+      "left": 3.8,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -243.6,
+      "left": 32.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -158.4,
+      "left": -29.35,
+      "rotate": 90,
+      "attrs": { "value": "220000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -158.4,
+      "left": -0.55,
+      "rotate": 90,
+      "attrs": { "value": "220000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -158.4,
+      "left": 28.25,
+      "rotate": 90,
+      "attrs": { "value": "220000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "v0" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pir1:OUT", "esp:15", "green", [ "v0" ] ],
+    [ "relay1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "relay1:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "relay1:IN", "esp:2", "green", [ "h0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:16", "green", [ "h326.4", "v-270" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led1:A", "bb1:2t.a", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:1t.a", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:5t.b", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:4t.b", "", [ "$bb" ] ],
+    [ "led3:A", "bb1:8t.c", "", [ "$bb" ] ],
+    [ "led3:C", "bb1:7t.c", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:8t.e", "", [ "$bb" ] ],
+    [ "r3:2", "bb1:8b.i", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:5t.e", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:5b.i", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:2t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:2b.i", "", [ "$bb" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "r2:2", "esp:17", "green", [ "h0" ] ],
+    [ "led3:A", "r3:1", "green", [ "v0" ] ],
+    [ "r3:2", "esp:18", "green", [ "h0" ] ],
+    [ "led2:C", "esp:GND.2", "green", [ "v0" ] ],
+    [ "led3:C", "esp:GND.3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
