@@ -1,1 +1,1 @@
-httpsthingspeak.mathworks.comchannels2751971
+https://thingspeak.mathworks.com/channels/2751971
